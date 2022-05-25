@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Ap204_Pronia.ViewModels;
 
 namespace Ap204_Pronia.Controllers
 {
@@ -21,10 +22,11 @@ namespace Ap204_Pronia.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            HomeVm model = new HomeVm
+            HomeVM model = new HomeVM
             {
             Sliders = await _context.Sliders.ToListAsync(),
-            Customers = await _context.Customers.ToListAsync()
+            Customers = await _context.Customers.ToListAsync(),
+            Plants = await _context.Plants.Include(p => p.PlantImages).ToListAsync()
             };
             
             return View(model);

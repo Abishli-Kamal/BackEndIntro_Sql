@@ -53,6 +53,12 @@ namespace Ap204_Pronia
 
             app.UseEndpoints(endpoints =>
             {
+               
+                    endpoints.MapControllerRoute(
+                      name: "areas",
+                      pattern: "{area:exists}/{controller=dashbroad}/{action=index}/{id?}"
+                    );
+               
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

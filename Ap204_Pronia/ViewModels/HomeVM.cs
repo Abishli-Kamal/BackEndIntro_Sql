@@ -7,5 +7,6 @@ namespace Ap204_Pronia.ViewModels
     {
         public List<Slider> Sliders { get; set; }
         public List<Customer> Customers { get; set; }
+        public List<Plant>Plants { get; set; }
     }
 }
