@@ -15,5 +15,6 @@ namespace Ap204_Pronia.DAL
         public DbSet<Color> Colors { get; set; }
         public DbSet<PlantImage> PlantImages { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

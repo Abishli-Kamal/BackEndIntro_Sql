@@ -15,7 +15,7 @@ namespace Ap204_Pronia.Controllers
 {
     public class HomeController : Controller
     {
-        private  AppDbContext _context;
+        private AppDbContext _context;
         public HomeController(AppDbContext context)
         {
             _context = context;
@@ -24,14 +24,15 @@ namespace Ap204_Pronia.Controllers
         {
             HomeVM model = new HomeVM
             {
-            Sliders = await _context.Sliders.ToListAsync(),
-            Customers = await _context.Customers.ToListAsync(),
-            Plants = await _context.Plants.Include(p => p.PlantImages).ToListAsync()
+                Sliders = await _context.Sliders.ToListAsync(),
+                Customers = await _context.Customers.ToListAsync(),
+                Plants = await _context.Plants.Include(p => p.PlantImages).ToListAsync(),
+                Categories = await _context.Categories.ToListAsync()
             };
-            
+
             return View(model);
         }
 
-       
+
     }
 }

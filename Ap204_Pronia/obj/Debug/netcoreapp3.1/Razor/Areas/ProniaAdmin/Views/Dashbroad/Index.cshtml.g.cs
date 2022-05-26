@@ -12,8 +12,15 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\Areas\ProniaAdmin\Views\_ViewImports.cshtml"
+using Ap204_Pronia.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"83872c409543ed4b61aab2914e2bdaf7d37b1145", @"/Areas/ProniaAdmin/Views/Dashbroad/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"af07eee94bd644f9f743930b4dd9a9251906f13e", @"/Areas/ProniaAdmin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f54289a8a9cc2330d52892068f548cd18ef4ea07", @"/Areas/ProniaAdmin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_ProniaAdmin_Views_Dashbroad_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

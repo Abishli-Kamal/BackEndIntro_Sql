@@ -9,9 +9,9 @@ namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
     [Area("ProniaAdmin")]
     public class ColorController : Controller
     {
-       
-      
-             private readonly AppDbContext _context;
+
+
+        private readonly AppDbContext _context;
 
         public ColorController(AppDbContext context)
         {
@@ -20,28 +20,74 @@ namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<Models.Color> sizes = await _context.Colors.ToListAsync();
-            return View(sizes);
+            List<Models.Color> colors = await _context.Colors.ToListAsync();
+            return View(colors);
         }
         public IActionResult Create()
         {
-            return Json("Create");
+            return View();
         }
-        public IActionResult Detail(int id)
+        [HttpPost]
+        public async Task<IActionResult> Create(Models.Color color)
         {
-            return Json(id);
-        }
-        public IActionResult Edit(int id)
-        {
-            return Json(id);
+            if (!ModelState.IsValid) return View();
+            await _context.Colors.AddAsync(color);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Detail(int id)
         {
-            return Json(id);
+            Models.Color color = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
+            if (color == null) return NotFound();
+            return View(color);
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            Models.Color color = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
+            if (color == null) return NotFound();
+            return View(color);
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Edit(int id, Models.Color color)
+        {
+
+            Models.Color existedColor = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
+            if (existedColor == null) return NotFound();
+            if (id != color.Id) return BadRequest();
+
+            existedColor.Name = color.Name;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            Models.Color color = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
+            if (color == null) return NotFound();
+            return View(color);
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteSize(int id)
+        {
+            Models.Color color = await _context.Colors.FirstOrDefaultAsync(s => s.Id == id);
+            if (color == null) return NotFound();
+
+            _context.Colors.Remove(color);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
     }
+
 }
-    
+
+
 

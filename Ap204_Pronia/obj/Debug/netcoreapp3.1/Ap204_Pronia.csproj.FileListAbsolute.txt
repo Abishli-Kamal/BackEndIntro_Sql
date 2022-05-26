@@ -222,3 +222,16 @@ C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Size\Index.cshtml.g.cs
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\_ViewImports.cshtml.g.cs
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Color\Index.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Size\Create.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Size\Detail.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Size\Edit.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Size\Delete.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Color\Create.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Color\Detail.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Color\Edit.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Color\Delete.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Category\Index.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Category\Create.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Category\Delete.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Category\Detail.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Category\Edit.cshtml.g.cs
