@@ -1,14 +1,27 @@
-﻿namespace Ap204_Pronia.Models
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Ap204_Pronia.Models
 {
-    
-        public class Slider
-        {
-            public int Id { get; set; }
-            public string Image { get; set; }
-            public string Title { get; set; }
-            public string Subtitle { get; set; }
-            public byte Discount { get; set; }
-            public string DiscoverUrl { get; set; }
-        }
-    
+
+    public class Slider
+    {
+        public int Id { get; set; }
+        public string Image { get; set; }
+        [StringLength(maximumLength: 40)]
+        public string Title { get; set; }
+        [StringLength(maximumLength: 100)]
+        public string Subtitle { get; set; }
+        [Range(0, 100)]
+        public byte Discount { get; set; }
+        public string DiscoverUrl { get; set; }
+        [Range(1, 10)]
+        public byte Order { get; set; }
+
+        [NotMapped]
+        public IFormFile Photo { get; set; }
+
+    }
+
 }
