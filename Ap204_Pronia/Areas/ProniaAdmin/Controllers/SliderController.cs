@@ -55,6 +55,11 @@ namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
 
 
         }
+        public async Task<IActionResult> Create()
+        {
+            List<Slider> slider = await _context.Sliders.ToListAsync();
+            return View();
+        }
         public async Task<IActionResult> Detail(int id)
         {
             Slider slider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);

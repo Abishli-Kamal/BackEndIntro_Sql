@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Threading.Tasks;
 
 namespace Ap204_Pronia.Models
 {
@@ -18,6 +21,14 @@ namespace Ap204_Pronia.Models
         public Color Color { get; set; }
         public int? SizeId { get; set; }
         public Size Size { get; set; }
+
         public List<PlantImage> PlantImages { get; set; }
+
+        [NotMapped]
+        public IFormFile MainImage { get; set; }
+        [NotMapped]
+        public List< IFormFile> AnotherImage { get; set; }
+
+        
     }
 }

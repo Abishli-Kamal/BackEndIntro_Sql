@@ -1,4 +1,6 @@
-﻿namespace Ap204_Pronia.Models
+﻿using System.Collections.Generic;
+
+namespace Ap204_Pronia.Models
 {
     public class Category
     {
