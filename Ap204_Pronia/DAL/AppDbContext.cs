@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ap204_Pronia.DAL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext>options ):base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
         }
@@ -16,5 +16,6 @@ namespace Ap204_Pronia.DAL
         public DbSet<PlantImage> PlantImages { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<PlantCategory> PlantCategories { get; set; }
     }
 }

@@ -44,6 +44,7 @@ namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
            Models.Size size = await _context.Sizes.FirstOrDefaultAsync(s => s.Id == id);
             if (size == null) return NotFound();
             return View(size);
+           
         }
 
         public async Task<IActionResult> Edit(int id)

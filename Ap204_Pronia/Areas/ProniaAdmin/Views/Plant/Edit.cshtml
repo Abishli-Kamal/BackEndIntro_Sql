@@ -37,6 +37,29 @@
         </select>
         <span class="text-danger" asp-validation-for="SKUCode"></span>
     </div>
+     <div>
+            <label class="mb-3">Plant Categories:</label><br />
+            <select class="form-control  border border-info" asp-for="CategoryIds" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"></select>
+            <span class="text-danger" asp-validation-for="CategoryIds"></span>
+        </div>
+
+         <div>
+        <label class="mb-3">Plant Categories:</label><br />
+        <select class="form-control" asp-for="CategoryIds">
+            @foreach (Category category in ViewBag.Categories)
+            {
+                if (Model.PlantCategories.FirstOrDefault(pc => pc.CategoryId == category.Id) != null)
+                {
+                    <option value="@category.Id" selected>@category.Name</option>
+                }
+                else
+                {
+                    <option value="@category.Id">@category.Name</option>
+                }
+            }
+        </select>
+        <span class="text-danger" asp-validation-for="CategoryIds"></span>
+    </div>
 
     <div>
         <label class="mb-3">Plant Shipping:</label><br />
@@ -63,7 +86,7 @@
     <div style="position:relative">
         <i class="mdi mdi-close closebtn" style="position:absolute;color:red ;font-size:20px;"> </i>
         <img style=" width:150px; height:90px;" src="~/assets/images/website-images/@Model.PlantImages.FirstOrDefault(i=>i.IsMain==true).ImagePath" />
-        <span class="text-danger" asp-validation-for="MainImage"></span>
+       <input type="hidden" value="@Model.PlantImages.FirstOrDefault(i=>i.IsMain==true).ImagePath" name="ImageIds"/>   
     </div>
 
     <p>Another Image</p>
@@ -73,7 +96,7 @@
             <div class="col-lg-2">
                 <i class="mdi mdi-close closebtn" style="position:absolute;color:red ;font-size:20px;"> </i>
                 <img style=" width:150px; height:90px;" src="~/assets/images/website-images/@img.ImagePath" />
-
+                <input type="hidden" value="@img.Id" name="ImageIds"/>
             </div>
         }
     </div>

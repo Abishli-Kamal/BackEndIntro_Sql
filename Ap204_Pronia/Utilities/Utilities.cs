@@ -19,6 +19,15 @@ namespace Ap204_Pronia
                 }
                 return fileName;
             }
-        }
+        public static void FileDelete(string root, string path, string imageName)
+        {
+            string fullPath = Path.Combine(root, path, imageName);
+            if (File.Exists(fullPath))
+            {
+                File.Delete(fullPath);
+            }
+        }   
+
+    }
     
 }

@@ -23,12 +23,20 @@ namespace Ap204_Pronia.Models
         public Size Size { get; set; }
 
         public List<PlantImage> PlantImages { get; set; }
+        public List<PlantCategory> PlantCategories { get; set; }
 
         [NotMapped]
         public IFormFile MainImage { get; set; }
         [NotMapped]
         public List< IFormFile> AnotherImage { get; set; }
+        [NotMapped]
+        public List<int> ImageIds { get; set; }
 
-        
+        [NotMapped]
+        public int? MainImageIds { get; set; }
+
+        [NotMapped]
+        public List<int> CategoryIds { get; set; }
+
     }
 }
