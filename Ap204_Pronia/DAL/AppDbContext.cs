@@ -9,6 +9,13 @@ namespace Ap204_Pronia.DAL
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Seetting>()
+                .HasIndex(u => u.Key)
+                .IsUnique();
+        }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Plant> Plants { get; set; }
         public DbSet<Size> Sizes { get; set; }
@@ -17,5 +24,8 @@ namespace Ap204_Pronia.DAL
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<PlantCategory> PlantCategories { get; set; }
+        public DbSet<Seetting> Seettings { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
+
     }
 }

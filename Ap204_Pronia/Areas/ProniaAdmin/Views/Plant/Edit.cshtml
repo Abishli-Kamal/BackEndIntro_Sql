@@ -85,8 +85,8 @@
     <span class="mb-3">Plant Main Image :</span><br />
     <div style="position:relative">
         <i class="mdi mdi-close closebtn" style="position:absolute;color:red ;font-size:20px;"> </i>
-        <img style=" width:150px; height:90px;" src="~/assets/images/website-images/@Model.PlantImages.FirstOrDefault(i=>i.IsMain==true).ImagePath" />
-       <input type="hidden" value="@Model.PlantImages.FirstOrDefault(i=>i.IsMain==true).ImagePath" name="ImageIds"/>   
+        <img style=" width:150px; height:90px;" src="~/assets/images/website-images/@Model.PlantImages.FirstOrDefault(i=>i.IsMain==true)?.ImagePath" />
+       <input type="hidden" value="@Model.PlantImages.FirstOrDefault(i=>i.IsMain==true)?.ImagePath" name="ImageIds"/>   
     </div>
 
     <p>Another Image</p>

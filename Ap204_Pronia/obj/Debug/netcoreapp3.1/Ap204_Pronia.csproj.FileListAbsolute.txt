@@ -245,3 +245,4 @@ C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Ar
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Plant\Edit.cshtml.g.cs
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Plant\Detail.cshtml.g.cs
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Plant\Delete.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs

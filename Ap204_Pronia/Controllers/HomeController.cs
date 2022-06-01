@@ -27,7 +27,9 @@ namespace Ap204_Pronia.Controllers
                 Sliders = await _context.Sliders.ToListAsync(),
                 Customers = await _context.Customers.ToListAsync(),
                 Plants = await _context.Plants.Include(p => p.PlantImages).ToListAsync(),
-                Categories = await _context.Categories.ToListAsync()
+                Categories = await _context.Categories.ToListAsync(),
+                Seettings = await _context.Seettings.ToListAsync(),
+                SocialMedias = await _context.SocialMedias.ToListAsync(),
             };
 
             return View(model);

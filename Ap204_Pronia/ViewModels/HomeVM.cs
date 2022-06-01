@@ -11,6 +11,7 @@ namespace Ap204_Pronia.ViewModels
         public List<Category> Categories { get; set; }
         public List<Color> Colors { get; set; }
         public List<Size> Sizes { get; set; }
-
+        public List<Seetting> Seettings { get; set; }
+        public List<SocialMedia> SocialMedias { get; set; }
     }
 }

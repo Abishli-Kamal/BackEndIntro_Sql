@@ -4,56 +4,22 @@ using Ap204_Pronia.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ap204_Pronia.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220531225549_AddSettings")]
+    partial class AddSettings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.25")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Ap204_Pronia.Models.AnotherSetting", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("AccountIcon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AdvertisementImage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BasketIcon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FooterLogo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HeaderLogo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SearchIcon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WishListIcon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AnotherSettings");
-                });
 
             modelBuilder.Entity("Ap204_Pronia.Models.Category", b =>
                 {
@@ -204,9 +170,6 @@ namespace Ap204_Pronia.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("IconUrl")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Key")
                         .HasColumnType("nvarchar(450)");
 
@@ -283,15 +246,10 @@ namespace Ap204_Pronia.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SeettingId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SeettingId");
 
                     b.ToTable("SocialMedias");
                 });
@@ -329,13 +287,6 @@ namespace Ap204_Pronia.Migrations
                         .HasForeignKey("PlantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Ap204_Pronia.Models.SocialMedia", b =>
-                {
-                    b.HasOne("Ap204_Pronia.Models.Seetting", "Seetting")
-                        .WithMany("medias")
-                        .HasForeignKey("SeettingId");
                 });
 #pragma warning restore 612, 618
         }
