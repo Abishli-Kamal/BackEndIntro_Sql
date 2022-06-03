@@ -9,9 +9,6 @@ namespace Ap204_Pronia.ViewModels
         [Column(TypeName = "decimal(6,2)")]
         public decimal TotalPrice { get; set; }
         public int Count { get; set; }
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public string Image { get; set; }
 
         public BasketVM()
         {

@@ -1,9 +1,12 @@
 ﻿using Ap204_Pronia.DAL;
 using Ap204_Pronia.Models;
 using Ap204_Pronia.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,63 +21,103 @@ namespace Ap204_Pronia.Controllers
         {
             _context = context;
         }
+
+        //public async Task<IActionResult> DeleteBasket(int id)
+        //{
+        //    Plant plant = await _context.Plants.FirstOrDefaultAsync(p => p.Id == id);
+        //    if (plant == null) return NotFound();
+        //    string basketStr = HttpContext.Request.Cookies["Basket"];
+
+        //    List<BasketCookieItemVM> basket;
+
+        //    if (string.IsNullOrEmpty(basketStr))
+        //    {
+
+        //        basket = JsonConvert.DeserializeObject<List<BasketCookieItemVM>>(basketStr);
+        //        BasketCookieItemVM existedcookie = basket.FirstOrDefault(i => i.Id == plant.Id);
+
+        //        if (existedcookie == null)
+        //        {
+        //            BasketCookieItemVM cookie = new BasketCookieItemVM
+        //            {
+        //                Id = plant.Id,
+        //                Count = 1
+        //            };
+
+
+        //            basket.Remove(cookie);
+
+        //        }
+
+        //    }
+
+        //    HttpContext.Response.Cookies.Delete("Basket", basketStr);
+        //    return RedirectToAction("Index", "Home");
+        //}
+
+        public IActionResult DeleteBasket()
+        {
+            foreach (var cookie in HttpContext.Request.Cookies)
+            {
+                Response.Cookies.Delete(cookie.Key);
+                
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+
+
+
         public async Task<IActionResult> AddBasket(int id)
         {
             Plant plant = await _context.Plants.FirstOrDefaultAsync(p => p.Id == id);
             if (plant == null) return NotFound();
             string basketStr = HttpContext.Request.Cookies["Basket"];
-            BasketVM basket;
-            string itemsStr;
+        
+            List<BasketCookieItemVM> basket;
             if (string.IsNullOrEmpty(basketStr))
             {
-                basket = new BasketVM();
-                BasketItemVM item = new BasketItemVM
+                basket = new List<BasketCookieItemVM>();
+              
+
+                BasketCookieItemVM cookie = new BasketCookieItemVM
                 {
-                    Name = plant.Name,
-                    Plant = plant,
+                    Id = plant.Id,
                     Count = 1
                 };
-                basket.BasketItemVMs.Add(item);
-                basket.TotalPrice = item.Plant.Price;
-                basket.Name = item.Plant.Name;
-              
-                basket.Count = 1;
-                itemsStr = JsonConvert.SerializeObject(basket);
+               
+                basket.Add(cookie);
+                basketStr = JsonConvert.SerializeObject(basket);
 
             }
             else
             {
-                basket = JsonConvert.DeserializeObject<BasketVM>(basketStr);
+        
+                basket = JsonConvert.DeserializeObject<List<BasketCookieItemVM>>(basketStr);
+                BasketCookieItemVM existedcookie = basket.FirstOrDefault(i => i.Id == plant.Id);
 
-                BasketItemVM existedItem = basket.BasketItemVMs.FirstOrDefault(i => i.Plant.Id == id);
-                if (existedItem == null)
+                if (existedcookie == null)
                 {
-                    BasketItemVM item = new BasketItemVM
+                    BasketCookieItemVM cookie = new BasketCookieItemVM
                     {
-                     
-                        Plant = plant,
+                        Id = plant.Id,
                         Count = 1
-                        
                     };
-                    basket.BasketItemVMs.Add(item);
+
+                    
+                    basket.Add(cookie);
                 }
                 else
                 {
-                    existedItem.Count++;
+                    existedcookie.Count++;
                 }
 
-                decimal total = default;
-                foreach (BasketItemVM item in basket.BasketItemVMs)
-                {
-                    total += item.Plant.Price * item.Count;
-                }
-                basket.TotalPrice = total;
-                basket.Count = basket.BasketItemVMs.Count;
-                itemsStr = JsonConvert.SerializeObject(basket);
+               
+                basketStr = JsonConvert.SerializeObject(basket);
 
             }
 
-            HttpContext.Response.Cookies.Append("Basket", itemsStr);
+            HttpContext.Response.Cookies.Append("Basket", basketStr);
             return RedirectToAction("Index", "Home");
         }
 

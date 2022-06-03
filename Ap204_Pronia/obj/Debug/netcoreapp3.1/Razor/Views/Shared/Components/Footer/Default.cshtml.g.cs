@@ -41,7 +41,7 @@ using Ap204_Pronia.Services;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2f9fc6973e691530c5f8e784010423ea6ba3008d", @"/Views/Shared/Components/Footer/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9ed2287ce467d19eb2e1f7293340b346d95ce4af", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3f805a5b4d1460fc05f23883ef49b62520ba839b", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Shared_Components_Footer_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<Seetting>>
     #nullable disable
