@@ -22,50 +22,33 @@ namespace Ap204_Pronia.Controllers
             _context = context;
         }
 
-        //public async Task<IActionResult> DeleteBasket(int id)
-        //{
-        //    Plant plant = await _context.Plants.FirstOrDefaultAsync(p => p.Id == id);
-        //    if (plant == null) return NotFound();
-        //    string basketStr = HttpContext.Request.Cookies["Basket"];
-
-        //    List<BasketCookieItemVM> basket;
-
-        //    if (string.IsNullOrEmpty(basketStr))
-        //    {
-
-        //        basket = JsonConvert.DeserializeObject<List<BasketCookieItemVM>>(basketStr);
-        //        BasketCookieItemVM existedcookie = basket.FirstOrDefault(i => i.Id == plant.Id);
-
-        //        if (existedcookie == null)
-        //        {
-        //            BasketCookieItemVM cookie = new BasketCookieItemVM
-        //            {
-        //                Id = plant.Id,
-        //                Count = 1
-        //            };
-
-
-        //            basket.Remove(cookie);
-
-        //        }
-
-        //    }
-
-        //    HttpContext.Response.Cookies.Delete("Basket", basketStr);
-        //    return RedirectToAction("Index", "Home");
-        //}
-
-        public IActionResult DeleteBasket()
+        public async Task<IActionResult> DeleteBasket(int id)
         {
-            foreach (var cookie in HttpContext.Request.Cookies)
+            string basketStr = HttpContext.Request.Cookies["Basket"];
+
+            List<BasketCookieItemVM> basket;
+
+            if (!string.IsNullOrEmpty(basketStr))
             {
-                Response.Cookies.Delete(cookie.Key);
-                
+
+                basket = JsonConvert.DeserializeObject<List<BasketCookieItemVM>>(basketStr);
+                BasketCookieItemVM existedcookie = basket.FirstOrDefault(i => i.Id == id);
+
+                if (existedcookie != null)
+                {
+                 
+
+                    basket.Remove(existedcookie);
+                    basketStr = JsonConvert.SerializeObject(basket);
+
+                }
+
+              
             }
+
+            HttpContext.Response.Cookies.Append("Basket", basketStr);
             return RedirectToAction("Index", "Home");
         }
-
-
 
 
         public async Task<IActionResult> AddBasket(int id)

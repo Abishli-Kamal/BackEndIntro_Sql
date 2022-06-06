@@ -129,12 +129,25 @@
                                             </button>
                                             <ul class="dropdown-menu"
                                                 aria-labelledby="settingButton">
-                                                <li>
-                                                    <a class="dropdown-item" href="my-account.html">My account</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="login-register.html">Login | Register</a>
-                                                </li>
+                                                        @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item">@(User.Identity.Name)</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                                                    </li>
+                                                }
+
+                                                else
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Login">Login</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Register">Register</a>
+                                                    </li>
+                                                }
                                             </ul>
                                         </li>
                                         <li class="d-none d-lg-block">
@@ -440,12 +453,25 @@
                                             </button>
                                             <ul class="dropdown-menu"
                                                 aria-labelledby="stickysettingButton">
-                                                <li>
-                                                    <a class="dropdown-item" href="my-account.html">My account</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="login-register.html">Login | Register</a>
-                                                </li>
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item">@(User.Identity.Name)</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                                                    </li>
+                                                }
+
+                                                else
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Login">Login</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Register">Register</a>
+                                                    </li>
+                                                }
                                             </ul>
                                         </li>
                                         <li class="d-none d-lg-block">
@@ -527,7 +553,7 @@
                                             <a class="dropdown-item" href="my-account.html">My account</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="login-register.html">Login | Register</a>
+                                            <a class="dropdown-item">Login | Register</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -832,7 +858,7 @@
                                 @foreach (BasketItemVM item in basket?.BasketItemVMs)
                                 {
                                     <li class="minicart-product">
-                                        <a class="product-item_remove" asp-controller="Plant" asp-action="DeleteBasket" >
+                                        <a class="product-item_remove" asp-controller="Plant" asp-action="DeleteBasket" asp-route-id="@item.Plant.Id">
                                             <i class="pe-7s-close closebtn "
                                        data-tippy="Remove"
                                        data-tippy-inertia="true"
