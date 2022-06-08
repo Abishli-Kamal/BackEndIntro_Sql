@@ -102,9 +102,7 @@ namespace Ap204_Pronia.Controllers
                         ModelState.AddModelError("", "You have been dismissed for 5 minutes");
                         return View();
                     }
-                    {
-
-                    }
+                   
                     ModelState.AddModelError("", "Username or Password is incorrect");
                     return View();
 

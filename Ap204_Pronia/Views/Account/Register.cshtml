@@ -2,15 +2,7 @@
 @{
     ViewData["Title"] = "Register";
 }
-@*<script type = "text/javascript">
-    function ValidateCheckBox(sender, args) {
-    if (document.getElementById("<%=CheckBox1.ClientID %>").checked == true) {
-    args.IsValid = true;
-    } else {
-    args.IsValid = false;
-    }
-    }
-    </script>*@
+
 <main class="main-content">
     <div class="breadcrumb-area breadcrumb-height"
          data-bg-image="~/assets/images/breadcrumb/bg/1-1-1919x388.jpg">
@@ -36,7 +28,7 @@
 
                 <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
                 <div class="col-lg-6  pt-lg-0">
-                    <form method="post" runat="server">
+                    <form method="post">
                         <div class="login-form">
                             <h4 class="login-title">Register</h4>
                             <div class="row">

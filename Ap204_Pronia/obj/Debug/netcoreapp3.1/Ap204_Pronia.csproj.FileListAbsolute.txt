@@ -269,3 +269,5 @@ C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\bin\Debug\netcoreapp3.1\Microsof
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventLog.dll
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventSource.dll
 C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Account\Register.cshtml.g.cs
+C:\Users\user\Desktop\Ap204_Pronia\Ap204_Pronia\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Account\Login.cshtml.g.cs
