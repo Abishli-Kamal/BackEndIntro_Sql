@@ -1,4 +1,5 @@
 ﻿using Ap204_Pronia.DAL;
+using Ap204_Pronia.Hubs;
 using Ap204_Pronia.Models;
 using Ap204_Pronia.Services;
 using Microsoft.AspNetCore.Builder;
@@ -48,6 +49,7 @@ namespace Ap204_Pronia
 
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
             services.AddHttpContextAccessor();
+            services.AddSignalR();
 
         }
 
@@ -83,6 +85,7 @@ namespace Ap204_Pronia
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapHub<ChatHub>("/chathub");
             });
         }
     }
