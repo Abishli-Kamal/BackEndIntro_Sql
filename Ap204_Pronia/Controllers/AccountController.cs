@@ -70,6 +70,8 @@ namespace Ap204_Pronia.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+
         public IActionResult Login()
         {
             return View();

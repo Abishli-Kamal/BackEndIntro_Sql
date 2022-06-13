@@ -2,9 +2,10 @@
 
 namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
 {
+    [Area("ProniaAdmin")]
     public class DashbroadController : Controller
     {
-        [Area("ProniaAdmin")]
+       
         public IActionResult Index()
         {
             return View();

@@ -26,7 +26,7 @@ namespace Ap204_Pronia
             {
                 File.Delete(fullPath);
             }
-        }   
+        }       
 
     }
     

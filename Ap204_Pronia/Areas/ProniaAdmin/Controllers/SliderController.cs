@@ -14,7 +14,7 @@ namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
     public class SliderController : Controller
     {
 
-        private readonly AppDbContext _context;
+        private readonly AppDbContext _context; 
         private readonly IWebHostEnvironment _env;
 
         public SliderController(AppDbContext context, IWebHostEnvironment env)
@@ -52,7 +52,7 @@ namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
             await _context.Sliders.AddAsync(slider);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-
+                    
 
         }
         public async Task<IActionResult> Create()
@@ -63,7 +63,7 @@ namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
         public async Task<IActionResult> Detail(int id)
         {
             Slider slider = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);
-            if (slider == null) return NotFound();
+            if (slider == null) return NotFound();  
             return View(slider);
         }
 
