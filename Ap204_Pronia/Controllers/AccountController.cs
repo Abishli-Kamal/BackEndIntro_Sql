@@ -88,7 +88,7 @@ namespace Ap204_Pronia.Controllers
             string role = roles.FirstOrDefault(r => r == Roles.Member.ToString());
             if (role == null)
             {
-                ModelState.AddModelError("", "Please contact with admins");
+                ModelState.AddModelError("", "Please contact with admins"); 
                 return View();
             }
             else
@@ -101,11 +101,18 @@ namespace Ap204_Pronia.Controllers
                     {
                         if (result.IsLockedOut)
                         {
-                            ModelState.AddModelError("", "You have been dismissed for 5 minutes");
+                            ModelState.AddModelError("", "  You have been dismissed for 5 minutes");
                             return View();
                         }
-                        ModelState.AddModelError("", "Username or Password is incorrect");
-                        return View();
+                        else
+                        {
+
+                        }
+                        {
+                            ModelState.AddModelError("", "Username or Password is incorrect");
+                            return View();
+
+                        }
 
                     }
                 }
@@ -128,10 +135,6 @@ namespace Ap204_Pronia.Controllers
                 }
                 return RedirectToAction("Index", "Home");
             }
-
-
-
-
 
         }
         public async Task<IActionResult> Logout()

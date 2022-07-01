@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Ap204_Pronia\\Ap204_Pronia\\Ap204_Pronia.csproj": {}
+    "C:\\Users\\user\\Desktop\\Projects_Back_End\\Ap204_Pronia\\Ap204_Pronia\\Ap204_Pronia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Ap204_Pronia\\Ap204_Pronia\\Ap204_Pronia.csproj": {
+    "C:\\Users\\user\\Desktop\\Projects_Back_End\\Ap204_Pronia\\Ap204_Pronia\\Ap204_Pronia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Ap204_Pronia\\Ap204_Pronia\\Ap204_Pronia.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\Projects_Back_End\\Ap204_Pronia\\Ap204_Pronia\\Ap204_Pronia.csproj",
         "projectName": "Ap204_Pronia",
-        "projectPath": "C:\\Users\\user\\Desktop\\Ap204_Pronia\\Ap204_Pronia\\Ap204_Pronia.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\Projects_Back_End\\Ap204_Pronia\\Ap204_Pronia\\Ap204_Pronia.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Ap204_Pronia\\Ap204_Pronia\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\Projects_Back_End\\Ap204_Pronia\\Ap204_Pronia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -77,6 +77,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.25, 3.1.25]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

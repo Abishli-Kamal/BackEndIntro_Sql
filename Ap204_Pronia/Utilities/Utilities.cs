@@ -5,20 +5,20 @@ using System.Threading.Tasks;
 
 namespace Ap204_Pronia
 {
-            public static class FileUtilities
+    public static class FileUtilities
+    {
+        public static async Task<string> FileCreate(this IFormFile file, string root, string folder)
         {
-            public static async Task<string> FileCreate(this IFormFile file, string root, string folder)
-            {
-                string fileName = Guid.NewGuid() + file.FileName;
-                string path = Path.Combine(root, folder);
-                string fullPath = Path.Combine(path, fileName);
+            string fileName = Guid.NewGuid() + file.FileName;
+            string path = Path.Combine(root, folder);
+            string fullPath = Path.Combine(path, fileName);
 
-                using (FileStream stream = new FileStream(fullPath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream);
-                }
-                return fileName;
+            using (FileStream stream = new FileStream(fullPath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
             }
+            return fileName;
+        }
         public static void FileDelete(string root, string path, string imageName)
         {
             string fullPath = Path.Combine(root, path, imageName);
@@ -26,8 +26,8 @@ namespace Ap204_Pronia
             {
                 File.Delete(fullPath);
             }
-        }       
+        }
 
     }
-    
+
 }

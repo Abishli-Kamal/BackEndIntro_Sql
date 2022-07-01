@@ -45,7 +45,7 @@ namespace Ap204_Pronia.Areas.ProniaAdmin.Controllers
                 {
                     return View();
                 }
-            }
+            }   
 
 
             slider.Image = await slider.Photo.FileCreate(_env.WebRootPath, @"assets\images\website-images");
